@@ -1,17 +1,924 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chidex Global Tech | Business Management Software</title>
-<meta name="description" content="ChidexApp is business management and documentation software for customers, products, transactions, expenses, invoices and reports.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>CHIDEX BUSINESS | Business Management & Documentation</title>
+
+<meta name="description" content="CHIDEX BUSINESS is business management and documentation software for managing customers, products, sales, transactions, expenses, invoices, reports and business teams.">
+
 <style>
-:root{--bg:#f6f8fc;--ink:#122033;--muted:#5d6b7d;--brand:#3949ab;--card:#fff;--line:#e3e8f0}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}a{color:var(--brand);text-decoration:none}.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 7%;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0}.logo{font-weight:800;font-size:20px}.navlinks a{margin-left:22px}.hero{padding:90px 7%;text-align:center;background:#fff}.hero h1{font-size:46px;line-height:1.1;margin:0 auto 18px;max-width:850px}.hero p{font-size:19px;color:var(--muted);max-width:720px;margin:0 auto 30px}.btn{display:inline-block;background:var(--brand);color:white;padding:13px 25px;border-radius:8px;font-weight:700}.section{padding:65px 7%;max-width:1200px;margin:auto}.section h2{text-align:center;font-size:32px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.card{background:var(--card);padding:25px;border:1px solid var(--line);border-radius:12px}.card h3{margin-top:0}.pricing{max-width:520px;margin:30px auto;text-align:center}.price{font-size:38px;font-weight:800}.note{color:var(--muted)}footer{background:#111b2b;color:#dfe6f0;padding:35px 7%;text-align:center}footer a{color:#fff;margin:0 10px}.small{font-size:14px;color:var(--muted)}
-</style></head>
+:root{
+  --bg:#020817;
+  --bg2:#06152b;
+  --panel:#0a1b32;
+  --panel2:#0d2340;
+  --blue:#168cff;
+  --blue2:#38bdf8;
+  --cyan:#67e8f9;
+  --white:#f8fbff;
+  --text:#d9e7f5;
+  --muted:#8fa8c2;
+  --line:rgba(96,165,250,.20);
+  --shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+html{
+  background:var(--bg);
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 80% 10%,rgba(14,116,224,.18),transparent 30%),
+    radial-gradient(circle at 10% 40%,rgba(14,165,233,.10),transparent 30%),
+    linear-gradient(180deg,#020817 0%,#031226 45%,#020817 100%);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 7%;
+  background:rgba(2,8,23,.88);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+
+.logo{
+  font-size:21px;
+  font-weight:800;
+  letter-spacing:.5px;
+  color:var(--white);
+}
+
+.logo span{
+  color:var(--blue2);
+}
+
+.navlinks{
+  display:flex;
+  align-items:center;
+  gap:28px;
+  font-size:14px;
+  color:#c7d8ea;
+}
+
+.navlinks a:hover{
+  color:var(--cyan);
+}
+
+.nav-button{
+  padding:10px 18px;
+  border:1px solid rgba(56,189,248,.45);
+  border-radius:999px;
+  color:white;
+  background:rgba(14,116,224,.12);
+}
+
+.hero{
+  min-height:720px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:center;
+  gap:50px;
+  padding:80px 7%;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  right:-200px;
+  top:40px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(14,165,233,.16),transparent 68%);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.badge{
+  display:inline-block;
+  padding:7px 14px;
+  border:1px solid rgba(56,189,248,.35);
+  border-radius:999px;
+  background:rgba(14,116,224,.10);
+  color:var(--cyan);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1.5px;
+}
+
+.hero h1{
+  margin:22px 0 16px;
+  font-size:clamp(44px,6vw,78px);
+  line-height:1.02;
+  letter-spacing:-2px;
+  color:white;
+}
+
+.hero h1 span{
+  color:var(--blue2);
+  text-shadow:0 0 35px rgba(56,189,248,.25);
+}
+
+.hero p{
+  max-width:680px;
+  font-size:19px;
+  color:#a9bfd4;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 23px;
+  border-radius:10px;
+  font-weight:700;
+  border:1px solid rgba(56,189,248,.3);
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,#087df0,#22b4ff);
+  color:white;
+  box-shadow:0 10px 30px rgba(14,140,255,.22);
+}
+
+.btn-secondary{
+  background:rgba(255,255,255,.035);
+  color:#dcecff;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.shark-panel{
+  min-height:420px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  border:1px solid rgba(56,189,248,.20);
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(56,189,248,.18),transparent 40%),
+    linear-gradient(145deg,rgba(15,49,83,.78),rgba(2,12,28,.92));
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.shark-panel:before,
+.shark-panel:after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(56,189,248,.10);
+}
+
+.shark-panel:before{
+  width:420px;
+  height:420px;
+}
+
+.shark-panel:after{
+  width:280px;
+  height:280px;
+}
+
+.shark{
+  position:relative;
+  z-index:2;
+  font-size:145px;
+  filter:drop-shadow(0 15px 25px rgba(0,0,0,.6));
+}
+
+.shark-title{
+  position:absolute;
+  bottom:25px;
+  text-align:center;
+  width:100%;
+  z-index:3;
+}
+
+.shark-title strong{
+  display:block;
+  font-size:25px;
+  letter-spacing:6px;
+  color:white;
+}
+
+.shark-title small{
+  color:var(--blue2);
+  letter-spacing:2px;
+}
+
+.section{
+  padding:90px 7%;
+}
+
+.section-heading{
+  max-width:750px;
+  margin:0 auto 45px;
+  text-align:center;
+}
+
+.section-heading h2{
+  margin:0 0 12px;
+  font-size:40px;
+  color:white;
+}
+
+.section-heading p{
+  margin:0;
+  color:var(--muted);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.card{
+  padding:27px;
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(13,35,64,.90),rgba(6,21,43,.88));
+  border:1px solid var(--line);
+  box-shadow:0 12px 35px rgba(0,0,0,.18);
+}
+
+.card:hover{
+  border-color:rgba(56,189,248,.45);
+  transform:translateY(-3px);
+}
+
+.icon{
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  margin-bottom:18px;
+  background:rgba(14,140,255,.12);
+  border:1px solid rgba(56,189,248,.20);
+  font-size:22px;
+}
+
+.card h3{
+  margin:0 0 9px;
+  color:white;
+  font-size:19px;
+}
+
+.card p{
+  margin:0;
+  color:#91a9c0;
+  font-size:14px;
+}
+
+.shark-section{
+  padding:100px 7%;
+  text-align:center;
+  background:
+    linear-gradient(180deg,transparent,rgba(3,34,65,.65),transparent);
+}
+
+.shark-section h2{
+  margin:0 0 15px;
+  font-size:44px;
+  color:white;
+}
+
+.shark-section h2 span{
+  color:var(--blue2);
+}
+
+.shark-section p{
+  max-width:760px;
+  margin:0 auto;
+  color:#9bb2c8;
+  font-size:17px;
+}
+
+.steps{
+  max-width:1000px;
+  margin:auto;
+}
+
+.step{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:20px;
+  align-items:start;
+  margin-bottom:24px;
+}
+
+.step-number{
+  width:58px;
+  height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,#087df0,#22b4ff);
+  color:white;
+  font-weight:800;
+}
+
+.step-content{
+  padding:5px 0;
+}
+
+.step-content h3{
+  margin:0 0 5px;
+  color:white;
+}
+
+.step-content p{
+  margin:0;
+  color:var(--muted);
+}
+
+.pricing{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.price-card{
+  padding:28px 22px;
+  border-radius:18px;
+  background:linear-gradient(160deg,#0c2442,#06162c);
+  border:1px solid var(--line);
+}
+
+.price-card.featured{
+  border-color:rgba(56,189,248,.65);
+  box-shadow:0 0 35px rgba(14,140,255,.10);
+}
+
+.price-card h3{
+  color:white;
+  margin:0 0 8px;
+}
+
+.price-card .price{
+  font-size:27px;
+  font-weight:800;
+  color:var(--cyan);
+  margin:14px 0;
+}
+
+.price-card p{
+  color:#91a9c0;
+  font-size:13px;
+}
+
+.price-card ul{
+  padding-left:18px;
+  color:#b8c9da;
+  font-size:13px;
+}
+
+.cta{
+  margin:30px auto 0;
+  max-width:1050px;
+  padding:50px;
+  text-align:center;
+  border-radius:25px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(56,189,248,.16),transparent 50%),
+    linear-gradient(135deg,#071a31,#0a2545);
+  border:1px solid var(--line);
+}
+
+.cta h2{
+  margin:0 0 12px;
+  color:white;
+  font-size:35px;
+}
+
+.cta p{
+  max-width:650px;
+  margin:0 auto;
+  color:#9bb2c8;
+}
+
+footer{
+  margin-top:50px;
+  padding:35px 7%;
+  border-top:1px solid var(--line);
+  background:#010611;
+  color:#7891a9;
+  text-align:center;
+  font-size:13px;
+}
+
+.footer-links{
+  margin-top:10px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+.footer-links a:hover{
+  color:var(--cyan);
+}
+
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:60px;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .pricing{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+  .nav{
+    padding:15px 5%;
+  }
+
+  .navlinks{
+    gap:10px;
+    font-size:12px;
+  }
+
+  .navlinks a:not(.nav-button){
+    display:none;
+  }
+
+  .hero,
+  .section,
+  .shark-section{
+    padding-left:5%;
+    padding-right:5%;
+  }
+
+  .hero{
+    min-height:auto;
+    padding-top:55px;
+    padding-bottom:70px;
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .grid,
+  .pricing{
+    grid-template-columns:1fr;
+  }
+
+  .section-heading h2,
+  .shark-section h2{
+    font-size:32px;
+  }
+
+  .cta{
+    padding:35px 22px;
+  }
+}
+</style>
+</head>
+
 <body>
-<nav class="nav"><div class="logo">CHIDEX GLOBAL TECH</div><div class="navlinks"><a href="#features">Features</a><a href="#pricing">Plans</a><a href="contact.html">Contact</a></div></nav>
-<section class="hero"><h1>Run your business with greater control.</h1><p>ChidexApp is business management and documentation software designed to help businesses manage customers, products, transactions, expenses, invoices and reports in one place.</p><a class="btn" href="#pricing">View Subscription</a></section>
-<section class="section" id="features"><h2>Everything in one place</h2><div class="grid"><div class="card"><h3>Customers</h3><p>Keep customer records organised and easy to access.</p></div><div class="card"><h3>Products</h3><p>Track products, prices, stock quantities and low-stock levels.</p></div><div class="card"><h3>Transactions</h3><p>Record and manage business transactions digitally.</p></div><div class="card"><h3>Expenses</h3><p>Document business expenses and keep financial records organised.</p></div><div class="card"><h3>Invoices</h3><p>Create and manage invoices for your business customers.</p></div><div class="card"><h3>Reports</h3><p>Review business information and performance through reports.</p></div></div></section>
-<section class="section" id="pricing"><h2>Simple subscription</h2><div class="card pricing"><h3>ChidexApp Basic</h3><div class="price">₦10,000</div><p>Subscription access for businesses that need professional business management and documentation tools.</p><p class="note">Additional plans and branch allowances may be available depending on business requirements.</p></div></section>
-<section class="section"><h2>Built for growing businesses</h2><p style="text-align:center;max-width:760px;margin:auto">Chidex Global Tech provides software tools for businesses that want to move from manual records to organised digital business management.</p></section>
-<footer><p><strong>Chidex Global Tech</strong></p><p><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></p><p class="small">© 2026 Chidex Global Tech. All rights reserved.</p></footer>
-</body></html>
+
+<nav class="nav">
+  <a class="logo" href="#home">
+    CHIDEX <span>GLOBAL TECH</span>
+  </a>
+
+  <div class="navlinks">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#pricing">Plans</a>
+    <a href="contact.html">Contact</a>
+    <a class="nav-button" href="#start">Start Free Trial</a>
+  </div>
+</nav>
+
+<main id="home">
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="badge">SIMPLE • SECURE • RELIABLE</div>
+
+    <h1>
+      Move Your Business
+      <span>Forward.</span>
+    </h1>
+
+    <p>
+      <strong>CHIDEX BUSINESS</strong> is business management and
+      documentation software designed to help you manage customers,
+      products, sales, transactions, expenses, invoices, reports and
+      your growing business from one place.
+    </p>
+
+    <div class="buttons">
+      <a class="btn btn-primary" href="#start">
+        START YOUR 7-DAY FREE TRIAL →
+      </a>
+
+      <a class="btn btn-secondary" href="#features">
+        EXPLORE FEATURES
+      </a>
+    </div>
+
+  </div>
+
+  <div class="shark-panel">
+    <div class="shark">🦈</div>
+
+    <div class="shark-title">
+      <strong>THE SHARK</strong>
+      <small>CHIDEX BUSINESS</small>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="section" id="features">
+
+  <div class="section-heading">
+    <h2>Everything Your Business Needs</h2>
+    <p>
+      Bring important business operations and documentation
+      together in one organized workspace.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">👥</div>
+      <h3>Customers</h3>
+      <p>
+        Keep customer records organized and accessible when you need them.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📦</div>
+      <h3>Products</h3>
+      <p>
+        Manage your products and keep important product information organized.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💰</div>
+      <h3>Sales & Transactions</h3>
+      <p>
+        Record sales and maintain a clear history of your business transactions.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💳</div>
+      <h3>Expenses</h3>
+      <p>
+        Record and organize business expenses for better financial visibility.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🧾</div>
+      <h3>Invoices & Documents</h3>
+      <p>
+        Create and manage important business documentation for your operations.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>Reports</h3>
+      <p>
+        Review business activity and use reports to understand your operations.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏢</div>
+      <h3>Branches</h3>
+      <p>
+        Manage multiple business branches according to your subscription plan.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">👤</div>
+      <h3>Company Users</h3>
+      <p>
+        Bring members of your team into your business workspace.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔐</div>
+      <h3>Roles & Permissions</h3>
+      <p>
+        Control what different company users are allowed to access and manage.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🖨️</div>
+      <h3>Printing & PDF</h3>
+      <p>
+        Prepare business documents for printing and digital use.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📤</div>
+      <h3>Sharing</h3>
+      <p>
+        Share business documents and information when required.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚙️</div>
+      <h3>Business Settings</h3>
+      <p>
+        Configure your business workspace and keep your information organized.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="shark-section">
+
+  <h2>Powered by the <span>Shark.</span></h2>
+
+  <p>
+    The Shark represents strength, movement, focus and forward progress.
+    CHIDEX BUSINESS is built around the same idea:
+    giving businesses practical technology to organize their operations
+    and move forward with confidence.
+  </p>
+
+</section>
+
+
+<section class="section" id="how-it-works">
+
+  <div class="section-heading">
+    <h2>How CHIDEX BUSINESS Works</h2>
+    <p>
+      Getting started is simple. Set up your business and begin managing
+      your daily operations.
+    </p>
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-number">01</div>
+      <div class="step-content">
+        <h3>Create Your Account</h3>
+        <p>
+          Register your CHIDEX BUSINESS account with your personal account information.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">02</div>
+      <div class="step-content">
+        <h3>Set Up Your Business</h3>
+        <p>
+          Enter your business information and create your business workspace.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">03</div>
+      <div class="step-content">
+        <h3>Add Products</h3>
+        <p>
+          Add the products or items your business works with.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">04</div>
+      <div class="step-content">
+        <h3>Add Customers</h3>
+        <p>
+          Build your customer records and keep them organized.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">05</div>
+      <div class="step-content">
+        <h3>Record Sales</h3>
+        <p>
+          Record transactions and maintain your transaction history.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">06</div>
+      <div class="step-content">
+        <h3>Manage Expenses</h3>
+        <p>
+          Record your business expenses and keep them organized.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">07</div>
+      <div class="step-content">
+        <h3>Review Reports</h3>
+        <p>
+          Use reports to understand your business activity.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">08</div>
+      <div class="step-content">
+        <h3>Grow Your Business</h3>
+        <p>
+          Keep your operations organized as your business grows.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="pricing">
+
+  <div class="section-heading">
+    <h2>Plans That Grow With You</h2>
+    <p>
+      Start with a 7-day free trial and choose the plan that fits your business.
+    </p>
+  </div>
+
+  <div class="pricing">
+
+    <div class="price-card featured">
+      <h3>Free Trial</h3>
+      <div class="price">7 Days</div>
+      <p>Start exploring CHIDEX BUSINESS.</p>
+      <ul>
+        <li>7-day free trial</li>
+        <li>1 branch</li>
+        <li>Business management tools</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <h3>Basic</h3>
+      <div class="price">₦10,000 / month</div>
+      <p>For businesses starting their digital journey.</p>
+      <ul>
+        <li>1 branch</li>
+        <li>Core business tools</li>
+        <li>Business documentation</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <h3>Standard</h3>
+      <div class="price">₦20,000 / month</div>
+      <p>For growing businesses with more than one location.</p>
+      <ul>
+        <li>Up to 3 branches</li>
+        <li>Core business tools</li>
+        <li>Team management</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <h3>Professional</h3>
+      <div class="price">₦30,000 / month</div>
+      <p>For businesses requiring additional branch capacity.</p>
+      <ul>
+        <li>Up to 5 branches</li>
+        <li>Business management</li>
+        <li>Reports & documentation</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="start">
+
+  <div class="cta">
+
+    <h2>Ready to Move Your Business Forward?</h2>
+
+    <p>
+      Start your CHIDEX BUSINESS journey with a 7-day free trial
+      and discover a better way to organize your business.
+    </p>
+
+    <div class="buttons" style="justify-content:center;">
+      <a class="btn btn-primary" href="#">
+        START YOUR FREE TRIAL →
+      </a>
+
+      <a class="btn btn-secondary" href="contact.html">
+        CONTACT CHIDEX GLOBAL TECH
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <strong style="color:white;">
+    CHIDEX GLOBAL TECH
+  </strong>
+
+  <div>
+    Business Management & Documentation
+  </div>
+
+  <div class="footer-links">
+    <a href="terms.html">Terms of Service</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div style="margin-top:15px;">
+    © 2026 Chidex Global Tech. All rights reserved.
+  </div>
+
+</footer>
+
+</body>
+</html>
