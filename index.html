@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>CHIDEX BUSINESS | Business Management & Documentation</title>
+<title>SHARK | Business Management & Documentation</title>
 
-<meta name="description" content="CHIDEX BUSINESS is business management and documentation software for managing customers, products, sales, transactions, expenses, invoices, reports and business teams.">
+<meta name="description" content="SHARK is a business management and documentation application powered by CHIDEX GLOBAL TECH. Manage customers, products, sales, transactions, credit records, expenses, invoices, reports and business teams in one place.">
 
 <style>
 :root{
@@ -65,7 +65,7 @@ a{
 .logo{
   font-size:21px;
   font-weight:800;
-  letter-spacing:.5px;
+  letter-spacing:.8px;
   color:var(--white);
 }
 
@@ -151,6 +151,10 @@ a{
   color:#a9bfd4;
 }
 
+.hero p strong{
+  color:white;
+}
+
 .buttons{
   display:flex;
   flex-wrap:wrap;
@@ -164,6 +168,7 @@ a{
   border-radius:10px;
   font-weight:700;
   border:1px solid rgba(56,189,248,.3);
+  transition:.2s ease;
 }
 
 .btn-primary{
@@ -214,7 +219,18 @@ a{
   height:280px;
 }
 
-.shark{
+.shark-image{
+  position:relative;
+  z-index:2;
+  width:92%;
+  max-width:520px;
+  max-height:390px;
+  object-fit:contain;
+  filter:drop-shadow(0 18px 28px rgba(0,0,0,.65));
+  border-radius:22px;
+}
+
+.shark-fallback{
   position:relative;
   z-index:2;
   font-size:145px;
@@ -223,10 +239,12 @@ a{
 
 .shark-title{
   position:absolute;
-  bottom:25px;
+  bottom:22px;
   text-align:center;
   width:100%;
   z-index:3;
+  background:linear-gradient(transparent,rgba(0,0,0,.75));
+  padding-top:30px;
 }
 
 .shark-title strong{
@@ -276,6 +294,7 @@ a{
   background:linear-gradient(145deg,rgba(13,35,64,.90),rgba(6,21,43,.88));
   border:1px solid var(--line);
   box-shadow:0 12px 35px rgba(0,0,0,.18);
+  transition:.2s ease;
 }
 
 .card:hover{
@@ -371,6 +390,39 @@ a{
   color:var(--muted);
 }
 
+.pricing-switch{
+  max-width:420px;
+  margin:0 auto 30px;
+  display:flex;
+  padding:5px;
+  border-radius:999px;
+  background:#06162c;
+  border:1px solid var(--line);
+}
+
+.region-btn{
+  flex:1;
+  padding:12px 16px;
+  border:0;
+  border-radius:999px;
+  background:transparent;
+  color:#8fa8c2;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.region-btn.active{
+  background:linear-gradient(135deg,#087df0,#22b4ff);
+  color:white;
+}
+
+.pricing-note{
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+  margin:-15px auto 30px;
+}
+
 .pricing{
   max-width:1100px;
   margin:auto;
@@ -403,6 +455,12 @@ a{
   margin:14px 0;
 }
 
+.price-card .yearly{
+  font-size:14px;
+  color:#b8d7ee;
+  margin-bottom:8px;
+}
+
 .price-card p{
   color:#91a9c0;
   font-size:13px;
@@ -412,6 +470,14 @@ a{
   padding-left:18px;
   color:#b8c9da;
   font-size:13px;
+}
+
+.region-content{
+  display:none;
+}
+
+.region-content.active{
+  display:block;
 }
 
 .cta{
@@ -436,6 +502,16 @@ a{
   max-width:650px;
   margin:0 auto;
   color:#9bb2c8;
+}
+
+.powered{
+  margin-top:15px;
+  color:#8fa8c2;
+  font-size:13px;
+}
+
+.powered strong{
+  color:var(--blue2);
 }
 
 footer{
@@ -477,6 +553,10 @@ footer{
 @media(max-width:650px){
   .nav{
     padding:15px 5%;
+  }
+
+  .logo{
+    font-size:18px;
   }
 
   .navlinks{
@@ -522,6 +602,14 @@ footer{
   .cta{
     padding:35px 22px;
   }
+
+  .shark-panel{
+    min-height:330px;
+  }
+
+  .shark-image{
+    width:94%;
+  }
 }
 </style>
 </head>
@@ -530,7 +618,7 @@ footer{
 
 <nav class="nav">
   <a class="logo" href="#home">
-    CHIDEX <span>GLOBAL TECH</span>
+    SHARK <span>• CHIDEX GLOBAL TECH</span>
   </a>
 
   <div class="navlinks">
@@ -551,15 +639,15 @@ footer{
     <div class="badge">SIMPLE • SECURE • RELIABLE</div>
 
     <h1>
-      Move Your Business
-      <span>Forward.</span>
+      Meet
+      <span>SHARK.</span>
     </h1>
 
     <p>
-      <strong>CHIDEX BUSINESS</strong> is business management and
-      documentation software designed to help you manage customers,
-      products, sales, transactions, expenses, invoices, reports and
-      your growing business from one place.
+      <strong>SHARK</strong> is a business management and documentation
+      application designed to help businesses manage customers, products,
+      sales, transactions, credit records, expenses, invoices, reports,
+      teams and business documentation from one organized workspace.
     </p>
 
     <div class="buttons">
@@ -572,15 +660,30 @@ footer{
       </a>
     </div>
 
+    <div class="powered">
+      Powered by <strong>CHIDEX GLOBAL TECH</strong>
+    </div>
+
   </div>
 
   <div class="shark-panel">
-    <div class="shark">🦈</div>
+
+    <img
+      class="shark-image"
+      src="chidex-shark-hero.png"
+      alt="SHARK - powered by CHIDEX GLOBAL TECH"
+      onerror="this.style.display='none';document.getElementById('sharkFallback').style.display='block';"
+    >
+
+    <div id="sharkFallback" class="shark-fallback" style="display:none;">
+      🦈
+    </div>
 
     <div class="shark-title">
-      <strong>THE SHARK</strong>
-      <small>CHIDEX BUSINESS</small>
+      <strong>SHARK</strong>
+      <small>POWERED BY CHIDEX GLOBAL TECH</small>
     </div>
+
   </div>
 
 </section>
@@ -591,7 +694,7 @@ footer{
   <div class="section-heading">
     <h2>Everything Your Business Needs</h2>
     <p>
-      Bring important business operations and documentation
+      SHARK brings important business operations and documentation
       together in one organized workspace.
     </p>
   </div>
@@ -623,6 +726,15 @@ footer{
     </div>
 
     <div class="card">
+      <div class="icon">📒</div>
+      <h3>Credit Book</h3>
+      <p>
+        Keep track of credit-related customer records and outstanding
+        business obligations in an organized place.
+      </p>
+    </div>
+
+    <div class="card">
       <div class="icon">💳</div>
       <h3>Expenses</h3>
       <p>
@@ -632,7 +744,7 @@ footer{
 
     <div class="card">
       <div class="icon">🧾</div>
-      <h3>Invoices & Documents</h3>
+      <h3>Invoices & Business Documents</h3>
       <p>
         Create and manage important business documentation for your operations.
       </p>
@@ -643,6 +755,15 @@ footer{
       <h3>Reports</h3>
       <p>
         Review business activity and use reports to understand your operations.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🕒</div>
+      <h3>Activity Log</h3>
+      <p>
+        Keep a record of important business activities so authorized users
+        can see what actions were performed and when.
       </p>
     </div>
 
@@ -704,11 +825,14 @@ footer{
   <h2>Powered by the <span>Shark.</span></h2>
 
   <p>
-    The Shark represents strength, movement, focus and forward progress.
-    CHIDEX BUSINESS is built around the same idea:
-    giving businesses practical technology to organize their operations
-    and move forward with confidence.
+    SHARK represents strength, movement, focus and forward progress.
+    It is the business management application created to help businesses
+    organize their operations, documentation and teams.
   </p>
+
+  <div class="powered">
+    <strong>SHARK is powered by CHIDEX GLOBAL TECH.</strong>
+  </div>
 
 </section>
 
@@ -716,7 +840,7 @@ footer{
 <section class="section" id="how-it-works">
 
   <div class="section-heading">
-    <h2>How CHIDEX BUSINESS Works</h2>
+    <h2>How SHARK Works</h2>
     <p>
       Getting started is simple. Set up your business and begin managing
       your daily operations.
@@ -730,7 +854,7 @@ footer{
       <div class="step-content">
         <h3>Create Your Account</h3>
         <p>
-          Register your CHIDEX BUSINESS account with your personal account information.
+          Register your SHARK account with your personal account information.
         </p>
       </div>
     </div>
@@ -778,6 +902,16 @@ footer{
     <div class="step">
       <div class="step-number">06</div>
       <div class="step-content">
+        <h3>Manage Credit Records</h3>
+        <p>
+          Keep credit-related customer records and outstanding obligations organized.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">07</div>
+      <div class="step-content">
         <h3>Manage Expenses</h3>
         <p>
           Record your business expenses and keep them organized.
@@ -786,21 +920,11 @@ footer{
     </div>
 
     <div class="step">
-      <div class="step-number">07</div>
-      <div class="step-content">
-        <h3>Review Reports</h3>
-        <p>
-          Use reports to understand your business activity.
-        </p>
-      </div>
-    </div>
-
-    <div class="step">
       <div class="step-number">08</div>
       <div class="step-content">
-        <h3>Grow Your Business</h3>
+        <h3>Review Reports & Activity</h3>
         <p>
-          Keep your operations organized as your business grows.
+          Review reports and important business activity as your operations grow.
         </p>
       </div>
     </div>
@@ -819,50 +943,228 @@ footer{
     </p>
   </div>
 
-  <div class="pricing">
+  <div class="pricing-switch">
+    <button class="region-btn active" onclick="showRegion('nigeria',this)">
+      🇳🇬 Nigeria
+    </button>
 
-    <div class="price-card featured">
-      <h3>Free Trial</h3>
-      <div class="price">7 Days</div>
-      <p>Start exploring CHIDEX BUSINESS.</p>
-      <ul>
-        <li>7-day free trial</li>
-        <li>1 branch</li>
-        <li>Business management tools</li>
-      </ul>
+    <button class="region-btn" onclick="showRegion('international',this)">
+      🌍 International
+    </button>
+  </div>
+
+
+  <!-- NIGERIA -->
+
+  <div id="nigeria" class="region-content active">
+
+    <div class="pricing-note">
+      Nigerian subscription prices are displayed in Nigerian Naira (₦).
     </div>
 
-    <div class="price-card">
-      <h3>Basic</h3>
-      <div class="price">₦10,000 / month</div>
-      <p>For businesses starting their digital journey.</p>
-      <ul>
-        <li>1 branch</li>
-        <li>Core business tools</li>
-        <li>Business documentation</li>
-      </ul>
+    <div class="pricing">
+
+      <div class="price-card featured">
+        <h3>Starter</h3>
+
+        <div class="price">
+          ₦20,000 / month
+        </div>
+
+        <div class="yearly">
+          ₦200,000 / year
+        </div>
+
+        <p>
+          For businesses starting with organized digital management.
+        </p>
+
+        <ul>
+          <li>1 branch</li>
+          <li>1–3 users</li>
+          <li>Business management tools</li>
+          <li>Business documentation</li>
+        </ul>
+      </div>
+
+
+      <div class="price-card">
+        <h3>Business</h3>
+
+        <div class="price">
+          ₦50,000 / month
+        </div>
+
+        <div class="yearly">
+          ₦500,000 / year
+        </div>
+
+        <p>
+          For growing businesses managing multiple locations.
+        </p>
+
+        <ul>
+          <li>Up to 3 branches</li>
+          <li>Up to 10 users</li>
+          <li>Business management tools</li>
+          <li>Team management</li>
+        </ul>
+      </div>
+
+
+      <div class="price-card">
+        <h3>Big Business</h3>
+
+        <div class="price">
+          ₦125,000 / month
+        </div>
+
+        <div class="yearly">
+          ₦1,250,000 / year
+        </div>
+
+        <p>
+          For larger businesses requiring more branch capacity.
+        </p>
+
+        <ul>
+          <li>Up to 10 branches</li>
+          <li>Up to 30 users</li>
+          <li>Business management</li>
+          <li>Reports & documentation</li>
+        </ul>
+      </div>
+
+
+      <div class="price-card">
+        <h3>Enterprise</h3>
+
+        <div class="price">
+          ₦305,000 / month
+        </div>
+
+        <div class="yearly">
+          ₦3,050,000 / year
+        </div>
+
+        <p>
+          For businesses requiring maximum capacity.
+        </p>
+
+        <ul>
+          <li>Unlimited branches</li>
+          <li>Unlimited users</li>
+          <li>Business management</li>
+          <li>Reports & documentation</li>
+        </ul>
+      </div>
+
     </div>
 
-    <div class="price-card">
-      <h3>Standard</h3>
-      <div class="price">₦20,000 / month</div>
-      <p>For growing businesses with more than one location.</p>
-      <ul>
-        <li>Up to 3 branches</li>
-        <li>Core business tools</li>
-        <li>Team management</li>
-      </ul>
+  </div>
+
+
+  <!-- INTERNATIONAL -->
+
+  <div id="international" class="region-content">
+
+    <div class="pricing-note">
+      International subscription prices are displayed in US Dollars (USD).
     </div>
 
-    <div class="price-card">
-      <h3>Professional</h3>
-      <div class="price">₦30,000 / month</div>
-      <p>For businesses requiring additional branch capacity.</p>
-      <ul>
-        <li>Up to 5 branches</li>
-        <li>Business management</li>
-        <li>Reports & documentation</li>
-      </ul>
+    <div class="pricing">
+
+      <div class="price-card featured">
+        <h3>Starter</h3>
+
+        <div class="price">
+          $20 / month
+        </div>
+
+        <div class="yearly">
+          $200 / year
+        </div>
+
+        <p>
+          For businesses starting with organized digital management.
+        </p>
+
+        <ul>
+          <li>1 branch</li>
+          <li>Business management tools</li>
+          <li>Business documentation</li>
+        </ul>
+      </div>
+
+
+      <div class="price-card">
+        <h3>Business</h3>
+
+        <div class="price">
+          $50 / month
+        </div>
+
+        <div class="yearly">
+          $500 / year
+        </div>
+
+        <p>
+          For growing businesses managing multiple locations.
+        </p>
+
+        <ul>
+          <li>Up to 3 branches</li>
+          <li>Business management tools</li>
+          <li>Team management</li>
+        </ul>
+      </div>
+
+
+      <div class="price-card">
+        <h3>Big Business</h3>
+
+        <div class="price">
+          $100 / month
+        </div>
+
+        <div class="yearly">
+          $1,000 / year
+        </div>
+
+        <p>
+          For larger businesses requiring more branch capacity.
+        </p>
+
+        <ul>
+          <li>Up to 10 branches</li>
+          <li>Business management</li>
+          <li>Reports & documentation</li>
+        </ul>
+      </div>
+
+
+      <div class="price-card">
+        <h3>Enterprise</h3>
+
+        <div class="price">
+          $150 / month
+        </div>
+
+        <div class="yearly">
+          $1,500 / year
+        </div>
+
+        <p>
+          For businesses requiring maximum branch capacity.
+        </p>
+
+        <ul>
+          <li>Unlimited branches</li>
+          <li>Business management</li>
+          <li>Reports & documentation</li>
+        </ul>
+      </div>
+
     </div>
 
   </div>
@@ -877,11 +1179,12 @@ footer{
     <h2>Ready to Move Your Business Forward?</h2>
 
     <p>
-      Start your CHIDEX BUSINESS journey with a 7-day free trial
+      Start your SHARK journey with a 7-day free trial
       and discover a better way to organize your business.
     </p>
 
     <div class="buttons" style="justify-content:center;">
+
       <a class="btn btn-primary" href="#">
         START YOUR FREE TRIAL →
       </a>
@@ -889,6 +1192,11 @@ footer{
       <a class="btn btn-secondary" href="contact.html">
         CONTACT CHIDEX GLOBAL TECH
       </a>
+
+    </div>
+
+    <div class="powered">
+      SHARK is powered by <strong>CHIDEX GLOBAL TECH</strong>.
     </div>
 
   </div>
@@ -901,11 +1209,15 @@ footer{
 <footer>
 
   <strong style="color:white;">
-    CHIDEX GLOBAL TECH
+    SHARK
   </strong>
 
   <div>
     Business Management & Documentation
+  </div>
+
+  <div class="powered">
+    Powered by <strong>CHIDEX GLOBAL TECH</strong>
   </div>
 
   <div class="footer-links">
@@ -915,10 +1227,31 @@ footer{
   </div>
 
   <div style="margin-top:15px;">
-    © 2026 Chidex Global Tech. All rights reserved.
+    © 2026 CHIDEX GLOBAL TECH. All rights reserved.
   </div>
 
 </footer>
+
+
+<script>
+function showRegion(region,button){
+
+  document.querySelectorAll('.region-content')
+    .forEach(function(section){
+      section.classList.remove('active');
+    });
+
+  document.querySelectorAll('.region-btn')
+    .forEach(function(btn){
+      btn.classList.remove('active');
+    });
+
+  document.getElementById(region)
+    .classList.add('active');
+
+  button.classList.add('active');
+}
+</script>
 
 </body>
 </html>
